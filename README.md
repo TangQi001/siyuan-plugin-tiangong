@@ -32,27 +32,27 @@
 
 1. 打开插件设置，配置 `Base URL`、`API Key` 和模型。
 
-![image-20260521112927789](C:\Users\15639\AppData\Roaming\Typora\typora-user-images\image-20260521112927789.png)
+![image-20260521112927789](assets/readme/image-20260521112927789.png)
 
 2. 点击“测试模型”，确认接口连通性与模型可用性。
 
-![image-20260521112845685](C:\Users\15639\AppData\Roaming\Typora\typora-user-images\image-20260521112845685.png)
+![image-20260521112845685](assets/readme/image-20260521112845685.png)
 
 3. 在对话区选择提示词，决定是否包含当前文档，再发送消息。
 
-![image-20260521112906633](C:\Users\15639\AppData\Roaming\Typora\typora-user-images\image-20260521112906633.png)
+![image-20260521112906633](assets/readme/image-20260521112906633.png)
 
 4. 在块菜单中生成图表、HTML 或图片，结果会插入到当前块后方。
 
-![image-20260521112726021](C:\Users\15639\AppData\Roaming\Typora\typora-user-images\image-20260521112726021.png)
+![image-20260521112726021](assets/readme/image-20260521112726021.png)
 
-![image-20260521112954113](C:\Users\15639\AppData\Roaming\Typora\typora-user-images\image-20260521112954113.png)
+![image-20260521112954113](assets/readme/image-20260521112954113.png)
 
 5. 需要分析时，直接对当前文档执行 AI 分析。
 
-![image-20260521112803898](C:\Users\15639\AppData\Roaming\Typora\typora-user-images\image-20260521112803898.png)
+![image-20260521112803898](assets/readme/image-20260521112803898.png)
 
-![image-20260521112813322](C:\Users\15639\AppData\Roaming\Typora\typora-user-images\image-20260521112813322.png)
+![image-20260521112813322](assets/readme/image-20260521112813322.png)
 
 ## 开发
 
