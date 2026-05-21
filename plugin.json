@@ -2,7 +2,7 @@
   "name": "tiangong-ai",
   "author": "TianGong AI",
   "url": "https://github.com/TangQi001/siyuan-plguin-tiangong",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "minAppVersion": "3.6.4",
   "kernels": [
     "all"

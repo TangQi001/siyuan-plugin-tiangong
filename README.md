@@ -2,22 +2,6 @@
 
 TianGong AI is an OpenAI-compatible SiYuan plugin for document-aware chat, model testing, document analysis, and HTML, diagram, and image generation.
 
-## Sponsor Notice
-
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        <strong>Sponsor Notice</strong><br>
-        This project is sponsored by <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">nai.artai.cfd</a>. Plugin benefit:<br>
-        <code>sk-OFieHEA9PrChhnKecNZz9hTUXU53IvARTRyGPpNTcQVFlrtn</code><br>
-        <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">https://nai.artai.cfd</a><br>
-        Registration grants 500,000 tokens, and each invitation grants another 500,000 tokens.
-      </td>
-    </tr>
-  </table>
-</div>
-
 ## Features
 
 - Model testing: test the configured `Base URL`, `API Key`, and model directly in settings.
@@ -65,3 +49,5 @@ pnpm run dev
 ```bash
 pnpm run build
 ```
+
+Sponsor: apply for a free GPT Image 2 trial at https://nai.artai.cfd.

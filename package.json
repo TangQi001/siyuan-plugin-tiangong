@@ -1,6 +1,6 @@
 {
   "name": "tiangong-ai",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "TianGong AI plugin for SiYuan",
   "main": "index.js",
   "scripts": {

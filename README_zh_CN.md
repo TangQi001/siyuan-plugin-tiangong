@@ -2,22 +2,6 @@
 
 面向 SiYuan 的 OpenAI-compatible 插件，提供文档感知对话、模型测试、文档分析，以及 HTML、图表和图片生成。
 
-## 赞助商声明
-
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        <strong>赞助商声明</strong><br>
-        本项目由 <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">nai.artai.cfd</a> 赞助支持。插件福利如下：<br>
-        <code>sk-OFieHEA9PrChhnKecNZz9hTUXU53IvARTRyGPpNTcQVFlrtn</code><br>
-        <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">https://nai.artai.cfd</a><br>
-        注册赠送 50 万 token，邀请赠送 50 万 token。
-      </td>
-    </tr>
-  </table>
-</div>
-
 ## 功能
 
 - 模型测试：在设置页直接测试 `Base URL`、`API Key` 和模型配置是否可用。
@@ -65,3 +49,5 @@ pnpm run dev
 ```bash
 pnpm run build
 ```
+
+赞助：申请免费 GPT Image 2 试用可以在这个网站：https://nai.artai.cfd。
