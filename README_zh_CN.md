@@ -1,6 +1,6 @@
 # 天工智绘
 
-面向 SiYuan 的 OpenAI-compatible 插件，提供文档分析、对话编辑、HTML / 图表 / 图片生成、模型测试和可扩展工具工作流。
+面向 SiYuan 的 OpenAI-compatible 插件，提供文档感知对话、模型测试、文档分析，以及 HTML、图表和图片生成。
 
 ## 赞助商声明
 
@@ -12,7 +12,7 @@
         本项目由 <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">nai.artai.cfd</a> 赞助支持。插件福利如下：<br>
         <code>sk-OFieHEA9PrChhnKecNZz9hTUXU53IvARTRyGPpNTcQVFlrtn</code><br>
         <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">https://nai.artai.cfd</a><br>
-        该中转站注册赠送 50 万 token，邀请赠送 50 万 token。
+        注册赠送 50 万 token，邀请赠送 50 万 token。
       </td>
     </tr>
   </table>
@@ -30,10 +30,28 @@
 ## 使用方式
 
 1. 打开插件设置，配置 `Base URL`、`API Key` 和模型。
+
+![设置](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112927789.png)
+
 2. 点击“测试模型”，确认接口连通性与模型可用性。
+
+![模型测试](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112845685.png)
+
 3. 在对话区选择提示词，决定是否包含当前文档，再发送消息。
+
+![对话工作台](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112906633.png)
+
 4. 在块菜单中生成图表、HTML 或图片，结果会插入到当前块后方。
+
+![块菜单](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112726021.png)
+
+![生成结果](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112954113.png)
+
 5. 需要分析时，直接对当前文档执行 AI 分析。
+
+![分析入口](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112803898.png)
+
+![分析结果](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112813322.png)
 
 ## 开发
 

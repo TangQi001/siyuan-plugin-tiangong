@@ -286,6 +286,11 @@ export default class TianGongAIPlugin extends Plugin {
         void closeMcpClients();
     }
 
+    public async uninstall(): Promise<void> {
+        await this.removeData(SETTINGS_STORAGE);
+        await this.removeData(RUNTIME_STORAGE);
+    }
+
     public onDataChanged(): void {
         // avoid plugin auto-reload after saveData
     }

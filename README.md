@@ -1,67 +1,66 @@
-# 天工智绘
+# TianGong AI
 
-面向 SiYuan 的 OpenAI-compatible 插件，提供文档分析、对话编辑、HTML / 图表 / 图片生成、模型测试和可扩展工具工作流。
+TianGong AI is an OpenAI-compatible SiYuan plugin for document-aware chat, model testing, document analysis, and HTML, diagram, and image generation.
 
-## 赞助商声明
+## Sponsor Notice
 
 <div align="center">
   <table>
     <tr>
       <td>
-        <strong>赞助商声明</strong><br>
-        本项目由 <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">nai.artai.cfd</a> 赞助支持。赠送福利如下（deepseek模型）：<br>
+        <strong>Sponsor Notice</strong><br>
+        This project is sponsored by <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">nai.artai.cfd</a>. Plugin benefit:<br>
         <code>sk-OFieHEA9PrChhnKecNZz9hTUXU53IvARTRyGPpNTcQVFlrtn</code><br>
         <a href="https://nai.artai.cfd" target="_blank" rel="noreferrer">https://nai.artai.cfd</a><br>
-        该中转站注册赠送 50 万 token，邀请赠送 50 万 token。
+        Registration grants 500,000 tokens, and each invitation grants another 500,000 tokens.
       </td>
     </tr>
   </table>
 </div>
 
+## Features
 
-## 功能
+- Model testing: test the configured `Base URL`, `API Key`, and model directly in settings.
+- Chat workspace: use prompt presets, current-document context, model switching, history, and message recycling.
+- Document analysis: analyze the current block or image block and write structured results back to block attributes.
+- Content generation: generate Mermaid, TikZ, Excalidraw, HTML, and images.
+- Binding and recovery: bind reference blocks, refresh generated results, snapshot block states, and restore previous content.
+- Tool expansion: enable SiYuan native tools and MCP server tools as needed.
 
-- 模型测试：在设置页直接测试 `Base URL`、`API Key` 和模型配置是否可用。
-- 对话工作台：支持提示词预设、当前文档上下文、模型切换、历史对话和消息回收。
-- 文档分析：支持对当前块或图片块进行结构化分析，并回写到备注字段。
-- 内容生成：支持 Mermaid、TikZ、Excalidraw、HTML 和图片生成。
-- 绑定与恢复：支持参考块绑定、生成结果刷新、块状态快照与回退。
-- 工具扩展：支持 SiYuan 原生工具与 MCP 服务器工具按需启用。
+## Usage
 
-## 使用方式
+1. Open plugin settings and configure `Base URL`, `API Key`, and model.
 
-1. 打开插件设置，配置 `Base URL`、`API Key` 和模型。
+![Settings](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112927789.png)
 
-![image-20260521112927789](assets/readme/image-20260521112927789.png)
+2. Click "Test model" to verify API connectivity and model availability.
 
-2. 点击“测试模型”，确认接口连通性与模型可用性。
+![Model test](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112845685.png)
 
-![image-20260521112845685](assets/readme/image-20260521112845685.png)
+3. In the chat area, choose a prompt preset, decide whether to include the current document, and send a message.
 
-3. 在对话区选择提示词，决定是否包含当前文档，再发送消息。
+![Chat workspace](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112906633.png)
 
-![image-20260521112906633](assets/readme/image-20260521112906633.png)
+4. Generate diagrams, HTML, or images from the block menu. Results are inserted after the current block.
 
-4. 在块菜单中生成图表、HTML 或图片，结果会插入到当前块后方。
+![Block menu](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112726021.png)
 
-![image-20260521112726021](assets/readme/image-20260521112726021.png)
+![Generated content](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112954113.png)
 
-![image-20260521112954113](assets/readme/image-20260521112954113.png)
+5. When analysis is needed, run AI analysis on the current document.
 
-5. 需要分析时，直接对当前文档执行 AI 分析。
+![Analysis entry](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112803898.png)
 
-![image-20260521112803898](assets/readme/image-20260521112803898.png)
+![Analysis result](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112813322.png)
 
-![image-20260521112813322](assets/readme/image-20260521112813322.png)
-
-## 开发
+## Development
 
 ```bash
 pnpm i
 pnpm run dev
 ```
 
-## 构建
+## Build
 
 ```bash
 pnpm run build
