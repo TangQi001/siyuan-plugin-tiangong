@@ -1,0 +1,62 @@
+{
+  "name": "tiangong-ai",
+  "author": "TianGong AI",
+  "url": "https://example.com/tiangong-ai",
+  "version": "0.1.0",
+  "minAppVersion": "3.6.4",
+  "kernels": [
+    "windows",
+    "linux",
+    "darwin",
+    "ios",
+    "android",
+    "harmony",
+    "docker",
+    "all"
+  ],
+  "backends": [
+    "windows",
+    "linux",
+    "darwin",
+    "ios",
+    "android",
+    "harmony",
+    "docker",
+    "all"
+  ],
+  "frontends": [
+    "desktop",
+    "mobile",
+    "browser-desktop",
+    "browser-mobile",
+    "desktop-window",
+    "all"
+  ],
+  "disabledInPublish": false,
+  "displayName": {
+    "default": "TianGong AI",
+    "zh_CN": "\u5929\u5DE5\u667A\u7ED8"
+  },
+  "description": {
+    "default": "Turn SiYuan into a chat-first AI workspace for current-document context, model testing, and HTML, diagram, and image generation.",
+    "zh_CN": "\u628A SiYuan \u53D8\u6210\u53EF\u5BF9\u8BDD\u7684 AI \u5DE5\u4F5C\u53F0\uFF0C\u652F\u6301\u5F53\u524D\u6587\u6863\u4E0A\u4E0B\u6587\u3001\u6A21\u578B\u6D4B\u8BD5\uFF0C\u4EE5\u53CA HTML\u3001\u56FE\u8868\u548C\u56FE\u7247\u751F\u6210\u3002"
+  },
+  "readme": {
+    "default": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "funding": {
+    "openCollective": "",
+    "patreon": "",
+    "github": "",
+    "custom": []
+  },
+  "keywords": [
+    "ai",
+    "chat",
+    "html",
+    "diagram",
+    "image",
+    "siyuan"
+  ]
+}
