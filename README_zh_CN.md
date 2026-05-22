@@ -15,27 +15,27 @@
 
 1. 打开插件设置，配置 `Base URL`、`API Key` 和模型。
 
-![设置](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112927789.png)
+![设置](https://raw.githubusercontent.com/TangQi001/siyuan-plugin-tiangong/main/assets/readme/image-20260521112927789.png)
 
 2. 点击“测试模型”，确认接口连通性与模型可用性。
 
-![模型测试](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112845685.png)
+![模型测试](https://raw.githubusercontent.com/TangQi001/siyuan-plugin-tiangong/main/assets/readme/image-20260521112845685.png)
 
 3. 在对话区选择提示词，决定是否包含当前文档，再发送消息。
 
-![对话工作台](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112906633.png)
+![对话工作台](https://raw.githubusercontent.com/TangQi001/siyuan-plugin-tiangong/main/assets/readme/image-20260521112906633.png)
 
 4. 在块菜单中生成图表、HTML 或图片，结果会插入到当前块后方。
 
-![块菜单](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112726021.png)
+![块菜单](https://raw.githubusercontent.com/TangQi001/siyuan-plugin-tiangong/main/assets/readme/image-20260521112726021.png)
 
-![生成结果](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112954113.png)
+![生成结果](https://raw.githubusercontent.com/TangQi001/siyuan-plugin-tiangong/main/assets/readme/image-20260521112954113.png)
 
 5. 需要分析时，直接对当前文档执行 AI 分析。
 
-![分析入口](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112803898.png)
+![分析入口](https://raw.githubusercontent.com/TangQi001/siyuan-plugin-tiangong/main/assets/readme/image-20260521112803898.png)
 
-![分析结果](https://raw.githubusercontent.com/TangQi001/siyuan-plguin-tiangong/main/assets/readme/image-20260521112813322.png)
+![分析结果](https://raw.githubusercontent.com/TangQi001/siyuan-plugin-tiangong/main/assets/readme/image-20260521112813322.png)
 
 ## 开发
 
