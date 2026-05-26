@@ -134,7 +134,7 @@ async function connectMcpServer(server: McpServerConfig): Promise<McpSession> {
             protocolVersion: MCP_PROTOCOL_VERSION,
             capabilities: {},
             clientInfo: {
-                name: "tiangong-ai",
+                name: "siyuan-plugin-tiangong",
                 version: "0.1.0",
             },
         }, false);

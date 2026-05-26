@@ -346,7 +346,7 @@ function buildFallbackExcalidrawScene(label: string) {
     return {
         type: "excalidraw",
         version: 2,
-        source: "tiangong-ai",
+        source: "siyuan-plugin-tiangong",
         elements: [
             {
                 id: `text-${now}`,

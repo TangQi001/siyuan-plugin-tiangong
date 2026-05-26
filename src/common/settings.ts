@@ -62,7 +62,7 @@ export const DEFAULT_SKILLS: TianGongSettings["agent"]["skills"] = [
     {
         id: "chat",
         name: "对话",
-        description: "结合选中内容进行通用对话。",
+        description: "结合当前文档和选中内容进行通用对话。",
         systemPrompt: "你是运行在思源笔记中的简洁助手。",
         modelOverride: "",
         enabledTools: [
@@ -80,15 +80,15 @@ export const DEFAULT_SKILLS: TianGongSettings["agent"]["skills"] = [
         id: "summarize",
         name: "摘要",
         description: "总结内容并写回当前块。",
-        systemPrompt: "请总结提供的内容，并输出简洁结果。",
+        systemPrompt: "请总结提供的内容，并输出简洁结构。",
         modelOverride: "",
         enabledTools: ["siyuan.read_current_block", "siyuan.update_block", "siyuan.get_block_attrs"],
     },
     {
         id: "diagram",
         name: "图表",
-        description: "生成 Mermaid、TikZ 或 Excalidraw 内容。",
-        systemPrompt: "请根据选中内容生成准确的图表产物。",
+        description: "生成 Mermaid、TikZ、Excalidraw 或 HTML 图形内容。",
+        systemPrompt: "请根据选中内容生成准确、可编辑、可直接插入思源的图形产物。",
         modelOverride: "",
         enabledTools: ["siyuan.read_current_block", "siyuan.get_block_attrs", "siyuan.insert_after_current_block"],
     },
@@ -104,13 +104,13 @@ export const DEFAULT_PROMPT_PRESETS: TianGongSettings["agent"]["promptPresets"] 
     {
         id: "note-editor",
         name: "笔记整理",
-        content: "把当前页签内容整理成更清晰的笔记结构，必要时给出可直接粘贴的改写版本。",
+        content: "把当前页签内容整理成更清晰的笔记结构，必要时给出可直接插入的改写版本。",
         createdAt: Date.now(),
     },
     {
         id: "workflow",
         name: "工作流助手",
-        content: "像工作流助手一样推进任务，必要时调用工具，并把每一步结果说清楚。",
+        content: "像工作流助手一样推进任务，必要时调用工具，并把每一步结果说明清楚。",
         createdAt: Date.now(),
     },
 ];
@@ -161,8 +161,37 @@ export const DEFAULT_SETTINGS: TianGongSettings = {
     },
 };
 
-const LEGACY_PROMPT_GARBLED_PATTERN = /[榛樿绗旇宸ヤ璇风敤鎶婂綋鍓嶉〉缁欏嚭鍙洿鎺ラ]|[�]/;
+const LEGACY_PROMPT_GARBLED_PATTERN = /[瀵硅瘽鎽樿鍥捐〃榛樿绗旇宸ヤ綔娴佺紪杈戞€濇簮]|锟|�/;
 const LEGACY_AGENT_SYSTEM_PROMPT = "You are a helpful assistant operating inside SiYuan.";
+
+function looksGarbled(text: string): boolean {
+    return LEGACY_PROMPT_GARBLED_PATTERN.test(text);
+}
+
+function normalizeSkills(
+    skills: TianGongSettings["agent"]["skills"] | undefined,
+): TianGongSettings["agent"]["skills"] {
+    if (!Array.isArray(skills)) {
+        return [...DEFAULT_SKILLS];
+    }
+    const defaultsById = new Map(DEFAULT_SKILLS.map((item) => [item.id, item]));
+    return skills.map((item) => {
+        const fallback = defaultsById.get(item.id);
+        if (!fallback) {
+            return item;
+        }
+        const source = `${item.name}\n${item.description}\n${item.systemPrompt}`;
+        if (looksGarbled(source) || item.systemPrompt === LEGACY_AGENT_SYSTEM_PROMPT) {
+            return {
+                ...item,
+                name: fallback.name,
+                description: fallback.description,
+                systemPrompt: fallback.systemPrompt,
+            };
+        }
+        return item;
+    });
+}
 
 function normalizePromptPresets(
     presets: TianGongSettings["agent"]["promptPresets"] | undefined,
@@ -177,7 +206,7 @@ function normalizePromptPresets(
             return item;
         }
         const source = `${item.name}\n${item.content}`;
-        if (LEGACY_PROMPT_GARBLED_PATTERN.test(source) || source.includes(LEGACY_AGENT_SYSTEM_PROMPT)) {
+        if (looksGarbled(source) || source.includes(LEGACY_AGENT_SYSTEM_PROMPT)) {
             return {
                 ...item,
                 name: fallback.name,
@@ -208,6 +237,7 @@ export const DEFAULT_RUNTIME: TianGongRuntime = {
 
 export function mergeSettings(raw: unknown): TianGongSettings {
     const input = typeof raw === "string" ? safeJsonParse(raw, {}) : raw;
+    const inputAgent = (input as Partial<TianGongSettings>)?.agent;
     return {
         llm: {
             ...DEFAULT_SETTINGS.llm,
@@ -225,22 +255,21 @@ export function mergeSettings(raw: unknown): TianGongSettings {
         },
         agent: {
             ...DEFAULT_SETTINGS.agent,
-            ...(input as Partial<TianGongSettings>)?.agent,
+            ...inputAgent,
             systemPrompt:
-                typeof (input as Partial<TianGongSettings>)?.agent?.systemPrompt === "string" &&
-                (input as Partial<TianGongSettings>)?.agent?.systemPrompt.trim().length > 0 &&
-                (input as Partial<TianGongSettings>)?.agent?.systemPrompt !== LEGACY_AGENT_SYSTEM_PROMPT
-                    ? ((input as Partial<TianGongSettings>)?.agent?.systemPrompt as string)
+                typeof inputAgent?.systemPrompt === "string" &&
+                inputAgent.systemPrompt.trim().length > 0 &&
+                inputAgent.systemPrompt !== LEGACY_AGENT_SYSTEM_PROMPT &&
+                !looksGarbled(inputAgent.systemPrompt)
+                    ? inputAgent.systemPrompt
                     : DEFAULT_SETTINGS.agent.systemPrompt,
-            enabledTools: Array.isArray((input as Partial<TianGongSettings>)?.agent?.enabledTools)
-                ? ((input as Partial<TianGongSettings>)?.agent?.enabledTools as string[])
+            enabledTools: Array.isArray(inputAgent?.enabledTools)
+                ? inputAgent.enabledTools
                 : [...DEFAULT_SETTINGS.agent.enabledTools],
-            skills: Array.isArray((input as Partial<TianGongSettings>)?.agent?.skills)
-                ? ((input as Partial<TianGongSettings>)?.agent?.skills as TianGongSettings["agent"]["skills"])
-                : [...DEFAULT_SETTINGS.agent.skills],
-            promptPresets: normalizePromptPresets((input as Partial<TianGongSettings>)?.agent?.promptPresets),
-            mcpServers: Array.isArray((input as Partial<TianGongSettings>)?.agent?.mcpServers)
-                ? ((input as Partial<TianGongSettings>)?.agent?.mcpServers as TianGongSettings["agent"]["mcpServers"])
+            skills: normalizeSkills(inputAgent?.skills),
+            promptPresets: normalizePromptPresets(inputAgent?.promptPresets),
+            mcpServers: Array.isArray(inputAgent?.mcpServers)
+                ? inputAgent.mcpServers
                 : [...DEFAULT_SETTINGS.agent.mcpServers],
         },
         binding: {
