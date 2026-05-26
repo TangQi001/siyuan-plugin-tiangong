@@ -1,4 +1,4 @@
-﻿{
+{
   "pluginName": "TianGong AI",
   "openTianGongSettings": "Open TianGong AI Settings",
   "probeTianGongLLM": "Test connection",
@@ -142,5 +142,3 @@
   "imageGenerated": "Image generated and inserted after the current block",
   "generatedImageAlt": "TianGong AI generated image"
 }
-
-

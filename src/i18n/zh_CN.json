@@ -1,4 +1,4 @@
-﻿{
+{
   "pluginName": "天工智绘",
   "openTianGongSettings": "打开天工智绘设置",
   "probeTianGongLLM": "测试连接",
@@ -142,4 +142,3 @@
   "imageGenerated": "图片已生成并插入到当前块后方",
   "generatedImageAlt": "天工 AI 生成图片"
 }
-

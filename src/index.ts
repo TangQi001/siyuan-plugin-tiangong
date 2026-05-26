@@ -42,7 +42,7 @@ const LOCALE_FALLBACKS: Record<string, Record<string, string>> = {
 
 const SETTINGS_STORAGE = "settings";
 const RUNTIME_STORAGE = "runtime";
-const DOCK_TYPE = "tiangong-ai-dock";
+const DOCK_TYPE = "siyuan-plugin-tiangong-dock";
 
 export default class TianGongAIPlugin extends Plugin {
     private settings: TianGongSettings = DEFAULT_SETTINGS;

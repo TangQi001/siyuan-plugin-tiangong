@@ -5,10 +5,10 @@ TianGong AI is an OpenAI-compatible SiYuan plugin for document-aware chat, model
 ## Features
 
 - Model testing: test the configured `Base URL`, `API Key`, and model directly in settings.
-- Chat workspace: use prompt presets, current-document context, model switching, history, and message recycling.
+- Chat workspace: use prompt presets, current-document context, model switching, history, and assistant-message insertion.
 - Document analysis: analyze the current block or image block and write structured results back to block attributes.
-- Content generation: generate Mermaid, TikZ, Excalidraw, HTML, and images.
-- Binding and recovery: bind reference blocks, refresh generated results, snapshot block states, and restore previous content.
+- Content generation: generate Mermaid, TikZ, Excalidraw, HTML `<div>` vector blocks, and images.
+- Recovery: snapshot block states and restore previous content after generated edits.
 - Tool expansion: enable SiYuan native tools and MCP server tools as needed.
 
 ## Usage
