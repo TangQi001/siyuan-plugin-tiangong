@@ -27,7 +27,6 @@ module.exports = (env, argv) => {
                     {from: "icon.png", to: "./dist/"},
                     {from: "preview.png", to: "./dist/"},
                     {from: "src/i18n/", to: "./dist/i18n/"},
-                    {from: "dist/kernel.js", to: "./dist/"},
                 ],
             }),
         );

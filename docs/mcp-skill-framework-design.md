@@ -89,7 +89,7 @@ The plugin should not treat MCP as a UI feature. It is a capability bridge.
 
 Recommended boundary:
 
-- kernel side manages MCP connections,
+- the plugin runtime manages MCP connections from the stable frontend plugin entry,
 - UI side only configures servers and selects tools,
 - conversation layer receives tool results as structured data.
 
