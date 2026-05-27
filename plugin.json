@@ -2,7 +2,7 @@
   "name": "siyuan-plugin-tiangong",
   "author": "TianGong AI",
   "url": "https://github.com/TangQi001/siyuan-plugin-tiangong",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "minAppVersion": "3.6.4",
   "kernels": [
     "all"

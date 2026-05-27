@@ -26,7 +26,6 @@ module.exports = (env, argv) => {
                     {from: "plugin.json", to: "./dist/"},
                     {from: "icon.png", to: "./dist/"},
                     {from: "preview.png", to: "./dist/"},
-                    {from: "assets/readme/", to: "./dist/assets/readme/"},
                     {from: "src/i18n/", to: "./dist/i18n/"},
                     {from: "dist/kernel.js", to: "./dist/"},
                 ],
@@ -37,6 +36,7 @@ module.exports = (env, argv) => {
                 filename: "package.zip",
                 algorithm: "gzip",
                 include: [/dist/],
+                exclude: [/^dist[\\/]assets[\\/]readme[\\/]/],
                 pathMapper: (assetPath) => assetPath.replace("dist/", ""),
             }),
         );
